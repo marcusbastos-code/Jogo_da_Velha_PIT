@@ -17,6 +17,11 @@ Um jogo da velha clássico implementado em Python para ser jogado diretamente no
    ```bash
    python main.py
    ```
+## Regras do Jogo
+
+* Os dois decidem quem começa a partida.
+* Turnos alternados: Cada jogador, na sua vez, coloca o seu símbolo (X ou O) em apenas uma das casas que estiver vazia.
+* Sequência: O jogo continua com os participantes alternando as jogadas até que alguém vença ou todos os espaços fiquem preenchidos.
 
 ## Tecnologias
 * Python (Biblioteca padrão).
