@@ -4,7 +4,7 @@ Um jogo da velha clássico implementado em Python para ser jogado diretamente no
 
 ## Como Jogar
 
-1. Certifique-se de ter o **Python 3.x** instalado.
+1. Certifique-se de ter o Python instalado.
 2. Clone o repositório:
    ```bash
    git clone https://github.com
