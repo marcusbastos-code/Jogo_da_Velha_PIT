@@ -25,3 +25,12 @@ def mostrar_tabuleiro(tab):
         if i < len(tab) - 1:
             print("   ---+---+---")
     print()
+
+# Conta quantas casas vazias restam (for aninhado). Devolve um inteiro.
+def contar_vazias(tab):
+    vazias = 0
+    for i in range(len(tab)):
+        for j in range(len(tab[i])):
+            if tab[i][j] == " ":
+                vazias = vazias + 1
+    return vazias
