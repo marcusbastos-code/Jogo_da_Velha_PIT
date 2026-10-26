@@ -57,3 +57,21 @@ def verificar_vitoria(tab, simbolo):
                 completa = False
         if completa:
             return True
+
+ # diagonal principal
+    completa = True
+    for k in range(tamanho):
+        if tab[k][k] != simbolo:
+            completa = False
+    if completa:
+        return True
+
+    # diagonal secundária
+    completa = True
+    for k in range(tamanho):
+        if tab[k][tamanho - 1 - k] != simbolo:
+            completa = False
+    if completa:
+        return True
+
+    return False
