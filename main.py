@@ -34,3 +34,26 @@ def contar_vazias(tab):
             if tab[i][j] == " ":
                 vazias = vazias + 1
     return vazias
+
+# Recebe o tabuleiro e o símbolo; devolve True se o símbolo completou
+# uma linha, uma coluna ou uma diagonal (tudo com laços, sem if manual).
+def verificar_vitoria(tab, simbolo):
+    tamanho = len(tab)
+
+    # linhas
+    for i in range(tamanho):
+        completa = True
+        for j in range(tamanho):
+            if tab[i][j] != simbolo:
+                completa = False
+        if completa:
+            return True
+
+    # colunas (trocamos o índice que varia)
+    for j in range(tamanho):
+        completa = True
+        for i in range(tamanho):
+            if tab[i][j] != simbolo:
+                completa = False
+        if completa:
+            return True
