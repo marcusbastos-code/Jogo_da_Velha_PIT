@@ -75,3 +75,14 @@ def verificar_vitoria(tab, simbolo):
         return True
 
     return False
+
+# Lê um número entre minimo e maximo; repete até a entrada ser válida.
+def ler_numero(mensagem, minimo, maximo):
+    while True:
+        entrada = input(mensagem).strip()  # tira espaços extras
+        if entrada.isdigit():  # só dígitos? (letra/vazio/símbolo = False)
+            numero = int(entrada)  # conversão segura
+            if numero >= minimo and numero <= maximo:
+                return numero
+        print("Entrada inválida! Digite de " + str(minimo)
+              + " a " + str(maximo) + ".")
