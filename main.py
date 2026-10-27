@@ -95,3 +95,15 @@ def ler_sim_nao(mensagem):
         if resposta in validas:
             return resposta
         print("Resposta inválida! Digite S ou N.")
+
+# Lê o nome do jogador (padronizado em maiúsculas, sem espaços extras).
+# 'proibidos' é um vetor com nomes que não podem ser repetidos.
+def ler_nome(mensagem, proibidos):
+    while True:
+        nome = input(mensagem).strip().upper()
+        if nome == "":
+            print("O nome não pode ficar vazio!")
+        elif nome in proibidos:
+            print("Esse nome já está em uso nesta partida!")
+        else:
+            return nome
