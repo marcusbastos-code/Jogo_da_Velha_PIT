@@ -144,3 +144,21 @@ def registrar_resultado(ranking, nome1, nome2, vencedor):
         ranking[nome2]["vitorias"] = ranking[nome2]["vitorias"] + 1
         ranking[nome1]["derrotas"] = ranking[nome1]["derrotas"] + 1
 
+# Mostra o ranking ordenado pelo número de vitórias (maior primeiro).
+def mostrar_ranking(ranking):
+    print("\n===== RANKING DE JOGADORES =====")
+    if len(ranking) == 0:
+        print("Ainda não há jogadores no ranking.")
+        return
+    lista = []  # vetor de tuplas (vitorias, nome)
+    for nome in ranking:
+        lista.append((ranking[nome]["vitorias"], nome))
+    lista.sort()     # ordena do menor para o maior número de vitórias
+    lista.reverse()  # inverte: maior número de vitórias primeiro
+    for i in range(len(lista)):
+        nome = lista[i][1]
+        print(str(i + 1) + "º " + nome
+              + " - Vitórias: " + str(ranking[nome]["vitorias"])
+              + " | Derrotas: " + str(ranking[nome]["derrotas"])
+              + " | Empates: " + str(ranking[nome]["empates"]))
+
