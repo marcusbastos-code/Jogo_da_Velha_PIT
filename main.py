@@ -107,3 +107,18 @@ def ler_nome(mensagem, proibidos):
             print("Esse nome já está em uso nesta partida!")
         else:
             return nome
+
+# Lê a jogada (linha e coluna) e só aceita uma casa livre.
+# Devolve a posição como tupla (linha, coluna) com índices da matriz.
+def ler_jogada(tamanho, casas_usadas):
+    while True:
+        # o "- 1" transforma a escolha (1 a 3) no índice da matriz (0 a 2)
+        linha = ler_numero("Escolha a linha (1 a " + str(tamanho) + "): ",
+                           1, tamanho) - 1
+        coluna = ler_numero("Escolha a coluna (1 a " + str(tamanho) + "): ",
+                            1, tamanho) - 1
+        posicao = (linha, coluna)  # tupla com a jogada
+        if posicao in casas_usadas:  # consulta rápida no conjunto
+            print("Essa casa já está ocupada! Escolha outra.")
+        else:
+            return posicao
