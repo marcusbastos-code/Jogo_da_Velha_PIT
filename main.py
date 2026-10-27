@@ -86,3 +86,12 @@ def ler_numero(mensagem, minimo, maximo):
                 return numero
         print("Entrada inválida! Digite de " + str(minimo)
               + " a " + str(maximo) + ".")
+
+# Lê uma resposta S/N padronizada com strip() e upper().
+def ler_sim_nao(mensagem):
+    validas = {"S", "N"}  # conjunto de respostas válidas
+    while True:
+        resposta = input(mensagem).strip().upper()
+        if resposta in validas:
+            return resposta
+        print("Resposta inválida! Digite S ou N.")
