@@ -131,3 +131,16 @@ def garantir_registro(ranking, nome):
     if nome not in ranking:
         ranking[nome] = {"vitorias": 0, "derrotas": 0, "empates": 0}
 
+# Atualiza o ranking ao fim de uma partida.
+# 'vencedor' é o nome do vencedor ou "EMPATE".
+def registrar_resultado(ranking, nome1, nome2, vencedor):
+    if vencedor == "EMPATE":
+        ranking[nome1]["empates"] = ranking[nome1]["empates"] + 1
+        ranking[nome2]["empates"] = ranking[nome2]["empates"] + 1
+    elif vencedor == nome1:
+        ranking[nome1]["vitorias"] = ranking[nome1]["vitorias"] + 1
+        ranking[nome2]["derrotas"] = ranking[nome2]["derrotas"] + 1
+    else:
+        ranking[nome2]["vitorias"] = ranking[nome2]["vitorias"] + 1
+        ranking[nome1]["derrotas"] = ranking[nome1]["derrotas"] + 1
+
