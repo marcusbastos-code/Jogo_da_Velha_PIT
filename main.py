@@ -162,3 +162,34 @@ def mostrar_ranking(ranking):
               + " | Derrotas: " + str(ranking[nome]["derrotas"])
               + " | Empates: " + str(ranking[nome]["empates"]))
 
+# Mostra o placar acumulado com porcentagens.
+def mostrar_placar(placar):
+    total = placar["X"] + placar["O"] + placar["Empates"]
+    print("\n===== PLACAR DA SESSÃO =====")
+    print("Vitórias de X: " + str(placar["X"]))
+    print("Vitórias de O: " + str(placar["O"]))
+    print("Empates: " + str(placar["Empates"]))
+    if total > 0:
+        pct_x = int(placar["X"] * 1000 / total) / 10
+        pct_o = int(placar["O"] * 1000 / total) / 10
+        print("Aproveitamento de X: " + str(pct_x) + "%")
+        print("Aproveitamento de O: " + str(pct_o) + "%")
+
+
+# Mostra o histórico com o resultado de cada partida.
+def mostrar_historico(historico):
+    print("\n===== HISTÓRICO DE PARTIDAS =====")
+    if len(historico) == 0:
+        print("Nenhuma partida jogada ainda.")
+    for i in range(len(historico)):
+        print("Partida " + str(i + 1) + ": " + historico[i])
+
+
+def mostrar_regras():
+    print("\n===== REGRAS DO JOGO DA VELHA =====")
+    print("1. O tabuleiro tem 3 linhas e 3 colunas.")
+    print("2. Os jogadores se alternam; cada um marca seu símbolo (X ou O)")
+    print("   em uma casa vazia, informando a linha e a coluna.")
+    print("3. Vence quem completar primeiro uma linha, uma coluna ou")
+    print("   uma diagonal com o seu símbolo.")
+    print("4. Se o tabuleiro encher sem vencedor, a partida empata.")
