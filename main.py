@@ -226,3 +226,21 @@ def jogar_partida(jogador1, jogador2):
             return ("EMPATE", "-")
 
         vez_do_primeiro = not vez_do_primeiro
+
+# ---------- PROGRAMA PRINCIPAL ----------
+
+def main():
+    placar = {"X": 0, "O": 0, "Empates": 0}  # dicionário: placar acumulado
+    historico = []                           # vetor: resultado de cada partida
+    ranking = {}                             # dicionário de registros
+
+    print("=== JOGO DA VELHA ===")
+    while True:
+        print("\n----- MENU -----")
+        print("1 - Jogar")
+        print("2 - Ver regras")
+        print("3 - Ver placar")
+        print("4 - Ver ranking")
+        print("5 - Ver histórico")
+        print("0 - Sair")
+        opcao = ler_numero("Escolha uma opção: ", 0, 5)
