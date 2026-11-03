@@ -150,11 +150,11 @@ def mostrar_ranking(ranking):
     if len(ranking) == 0:
         print("Ainda não há jogadores no ranking.")
         return
-    lista = []  # vetor de tuplas (vitorias, nome)
+    lista = []  
     for nome in ranking:
         lista.append((ranking[nome]["vitorias"], nome))
-    lista.sort()     # ordena do menor para o maior número de vitórias
-    lista.reverse()  # inverte: maior número de vitórias primeiro
+    lista.sort()     
+    lista.reverse()  
     for i in range(len(lista)):
         nome = lista[i][1]
         print(str(i + 1) + "º " + nome
@@ -193,3 +193,36 @@ def mostrar_regras():
     print("3. Vence quem completar primeiro uma linha, uma coluna ou")
     print("   uma diagonal com o seu símbolo.")
     print("4. Se o tabuleiro encher sem vencedor, a partida empata.")
+
+
+def jogar_partida(jogador1, jogador2):
+    tab = criar_tabuleiro(3)       
+    casas_usadas = set()           
+    jogadas = []                   
+    vez_do_primeiro = True         
+
+    while True:
+        mostrar_tabuleiro(tab)
+        if vez_do_primeiro:
+            atual = jogador1
+        else:
+            atual = jogador2
+        print("Vez de " + atual[0] + " (" + atual[1] + ")")
+
+        posicao = ler_jogada(len(tab), casas_usadas)
+        linha = posicao[0]
+        coluna = posicao[1]
+        tab[linha][coluna] = atual[1]
+        casas_usadas.add(posicao)
+        jogadas.append(posicao)
+
+        if verificar_vitoria(tab, atual[1]):
+            mostrar_tabuleiro(tab)
+            print("Parabéns, " + atual[0] + " venceu a partida!")
+            return atual
+        if contar_vazias(tab) == 0:
+            mostrar_tabuleiro(tab)
+            print("Deu empate!")
+            return ("EMPATE", "-")
+
+        vez_do_primeiro = not vez_do_primeiro
