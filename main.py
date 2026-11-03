@@ -244,3 +244,29 @@ def main():
         print("5 - Ver histórico")
         print("0 - Sair")
         opcao = ler_numero("Escolha uma opção: ", 0, 5)
+        
+    if opcao == 1:
+                nome1 = ler_nome("Nome do jogador 1 (X): ", [])
+                nome2 = ler_nome("Nome do jogador 2 (O): ", [nome1])
+                jogador1 = (nome1, "X")  # tupla: dados fixos do jogador
+                jogador2 = (nome2, "O")
+                garantir_registro(ranking, nome1)
+                garantir_registro(ranking, nome2)
+    
+                jogando = True
+                while jogando:
+                    vencedor = jogar_partida(jogador1, jogador2)
+    
+                    if vencedor[0] == "EMPATE":
+                        placar["Empates"] = placar["Empates"] + 1
+                    else:
+                        placar[vencedor[1]] = placar[vencedor[1]] + 1
+                    historico.append(vencedor[0])
+                    registrar_resultado(ranking, nome1, nome2, vencedor[0])
+    
+                    mostrar_placar(placar)
+                    mostrar_ranking(ranking)
+    
+                    resposta = ler_sim_nao("\nJogar novamente? (S/N): ")
+                    if resposta == "N":
+                        jogando = False
