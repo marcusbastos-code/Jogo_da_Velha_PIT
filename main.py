@@ -282,7 +282,7 @@ def main():
         mostrar_placar(placar)
         mostrar_ranking(ranking)
         print("\nAté a próxima!")
-        break
+    break
     
     
     main()
