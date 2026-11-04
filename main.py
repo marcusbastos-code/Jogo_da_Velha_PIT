@@ -252,37 +252,37 @@ def main():
                 garantir_registro(ranking, nome1)
                 garantir_registro(ranking, nome2)
     
-                jogando = True
-                while jogando:
-                    vencedor = jogar_partida(jogador1, jogador2)
+        jogando = True
+        while jogando:
+            vencedor = jogar_partida(jogador1, jogador2)
     
-                    if vencedor[0] == "EMPATE":
-                        placar["Empates"] = placar["Empates"] + 1
-                    else:
-                        placar[vencedor[1]] = placar[vencedor[1]] + 1
-                    historico.append(vencedor[0])
-                    registrar_resultado(ranking, nome1, nome2, vencedor[0])
+            if vencedor[0] == "EMPATE":
+                placar["Empates"] = placar["Empates"] + 1
+            else:
+                placar[vencedor[1]] = placar[vencedor[1]] + 1
+                historico.append(vencedor[0])
+                registrar_resultado(ranking, nome1, nome2, vencedor[0])
     
-                    mostrar_placar(placar)
-                    mostrar_ranking(ranking)
+                mostrar_placar(placar)
+                mostrar_ranking(ranking)
     
-                    resposta = ler_sim_nao("\nJogar novamente? (S/N): ")
-                    if resposta == "N":
-                        jogando = False
+                resposta = ler_sim_nao("\nJogar novamente? (S/N): ")
+                if resposta == "N":
+                    jogando = False
 
-    elif opcao == 2:
-        mostrar_regras()
-    elif opcao == 3:
-        mostrar_placar(placar)
-    elif opcao == 4:
-        mostrar_ranking(ranking)
-    elif opcao == 5:
-        mostrar_historico(historico)
-    else:
-        mostrar_placar(placar)
-        mostrar_ranking(ranking)
-        print("\nAté a próxima!")
-        break
+        elif opcao == 2:
+            mostrar_regras()
+        elif opcao == 3:
+            mostrar_placar(placar)
+        elif opcao == 4:
+            mostrar_ranking(ranking)
+        elif opcao == 5:
+            mostrar_historico(historico)
+        else:
+            mostrar_placar(placar)
+            mostrar_ranking(ranking)
+            print("\nAté a próxima!")
+            break
     
     
     main()
