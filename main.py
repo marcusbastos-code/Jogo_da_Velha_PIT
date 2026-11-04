@@ -270,7 +270,7 @@ def main():
                     if resposta == "N":
                         jogando = False
 
-      elif opcao == 2:
+            elif opcao == 2:
                 mostrar_regras()
             elif opcao == 3:
                 mostrar_placar(placar)
