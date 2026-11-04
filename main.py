@@ -270,19 +270,19 @@ def main():
                     if resposta == "N":
                         jogando = False
 
-                        elif opcao == 2:
-                            mostrar_regras()
-                        elif opcao == 3:
-                            mostrar_placar(placar)
-                        elif opcao == 4:
-                            mostrar_ranking(ranking)
-                        elif opcao == 5:
-                            mostrar_historico(historico)
-                        else:
-                            mostrar_placar(placar)
-                            mostrar_ranking(ranking)
-                            print("\nAté a próxima!")
-                            break
+    elif opcao == 2:
+        mostrar_regras()
+    elif opcao == 3:
+        mostrar_placar(placar)
+    elif opcao == 4:
+        mostrar_ranking(ranking)
+    elif opcao == 5:
+        mostrar_historico(historico)
+    else:
+        mostrar_placar(placar)
+        mostrar_ranking(ranking)
+        print("\nAté a próxima!")
+        break
     
     
     main()
