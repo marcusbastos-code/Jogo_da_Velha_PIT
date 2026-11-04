@@ -122,8 +122,7 @@ def ler_jogada(tamanho, casas_usadas):
             print("Essa casa já está ocupada! Escolha outra.")
         else:
             return posicao
-
----------- RANKING (desafio de lógica) ----------
+            
 
 # Cria o registro do jogador no ranking se ele ainda não existir.
 # O ranking é um dicionário de dicionários (como uma tabela de banco de dados).
