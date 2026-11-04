@@ -284,5 +284,4 @@ def main():
             print("\nAté a próxima!")
             break
     
-    
-    main()
+main()
